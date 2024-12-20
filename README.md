@@ -5,10 +5,10 @@ Developed as a personal challenge (and for personal use) to create all kind of P
 The main focus has been on **Chemical Engineering Diagrams**, but evolving for **Flowcharts** and more like **Electrical** shapes.
 
 There are 4 applications:
-* **PFDCreator** - create PFDs using objects drag & dropped on a canvas.
-* **PFDViewer** - view PFDs created by the PFDCreator.
-* **PFDOperator** - operate or control PFDs created by the PFDCreator.
-* **PFDShapeMaker** - create object shapes used by the PFDCreator (not started).
+* **PFDCreator** - create PFDs using objects drag & dropped on a canvas (completed v1).
+* **PFDViewer** - view PFDs created by the PFDCreator (development in progress).
+* **PFDOperator** - operate or control PFDs created by the PFDCreator (development in progress).
+* **PFDShapeMaker** - create object shapes used by the PFDCreator (development not started).
 
 ![1734684964174](https://github.com/user-attachments/assets/6f591361-94a7-4de9-9ae3-b75f1b0f7ee2)
 
