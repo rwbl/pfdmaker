@@ -1,0 +1,329 @@
+[b][textsize=20]PFDCreator[/textsize][/b] is an application to create all kind of [b]P[/b]rocess [b]F[/b]low [b]D[/b]iagrams (PFDs) using objects (shapes) which are dragged & dropped on a Drawing Board (Canvas).
+A PFD contains objects which are shapes with properties.
+The properties define the object shape position, size, colors, text & format, but also its value, unit, operate flag and more.
+There are a number of predefined shapes, the basic shapes but also dedicated shape types to create flowcharts, process instrumentation & piping diagrams or electrical circuits.
+[font=italic]Note[/font]
+In the text, the abbreviation PFD is also used for the Drawing Board.
+
+[font=italic]PFD Shape Types[/font]
+The PFDCreator has initially following shape types:
+[LIST]
+[*] Basic - Common shapes which can be used by all PFD types.
+[*] Flowchart - Shapes, like terminator, process, decision used to create flowcharts.
+[*] PID - Shapes for Process Instrumentation & Piping (PID) diagrams.
+[*] Electrical - Shapes to create electrical circuit diagrams.
+[/LIST]
+[font=italic]Note[/font]
+The PFDCreator idea has been evolved from creating simple PIDs. 
+[font=italic]Note[/font]
+To enhance the PFDCreator with more shape types, lookup the development notes (DEVNOTES.md). 
+
+[b][textsize=20]Main Menu[/textsize][/b]
+The main menu at the top of the application screen.
+
+[b][textsize=18]Menu File[/textsize][/b]
+Manage Process Flow Diagram (PFD) files located in the application (DirApp) folder.
+A PFD is stored in a text file with JSON format.
+The PFD file can be changed manually using a text editor, but be careful in case of JSON errors.
+
+[b][textsize=16]Menu File > New[/textsize][/b]
+Create a new unique PFD file in the application folder.
+An input dialog requests to enter the PFD filename with mandatory extension.pfd.
+The current PFD file is saved and the filename entered is checked if already exists.
+If the PFD filename already exists, then the dialog is aborted and try again with unique filename.
+
+[b][textsize=16]Menu File > Open[/textsize][/b]
+Open an existing PFD file from the application folder.
+The current PFD file is saved.
+
+[b][textsize=16]Menu File > Save[/textsize][/b]
+Save the PFD file in the application folder.
+
+[b][textsize=16]Menu File > Delete[/textsize][/b]
+Delete the current PFD file from the application folder.
+[font=italic]Warning[/font]
+Ensure to make a backup because the PFD file can not be restored.
+
+[b][textsize=16]Menu File > Export...[/textsize][/b]
+Export options, mainly to create PNG images.
+
+[b][textsize=16]Menu File > Export PFD to PNG[/textsize][/b]
+Create an image in PNG format from the current PFD.
+[font=italic]Note[/font]
+The image is created from the PFD as-is. This means, if the grid or the object indices are visible, then these are also shown on the image created.
+
+[b][textsize=16]Menu File > Export Shapes to PNG[/textsize][/b]
+Create PNG images for all PFD shapes.
+The images are stored in the application sub folder images.
+
+[b][textsize=16]Menu File > PFD Description[/textsize][/b]
+Set a brief description of the PFD file.
+The description is stored in the PFD file as JSON key.
+
+[b][textsize=16]Menu File > Exit[/textsize][/b]
+Close the application.
+The setting file PFDCreator.set, located in the application folder, are updated.
+
+[b][textsize=18]Menu Edit[/textsize][/b]
+
+[b][textsize=16]Menu Edit > Copy[/textsize][/b]
+Copy the select object.
+
+[b][textsize=16]Menu Edit > Paste[/textsize][/b]
+Paste the object copied into the PFD at object center position x=100, y=100.
+
+[b][textsize=16]Menu Edit > Cut[/textsize][/b]
+Cut the selected object.
+The object is removed from the PFD and from the object list, but can be pasted again at paste position x=100, y=100.
+
+[b][textsize=18]Menu Object[/textsize][/b]
+Manage an object. Prior providing help for actions, some info about object properties, index and tag.
+[b][textsize=16]Object Properties[/textsize][/b] 
+The object properties, shown at the right side of the mainform, are the same for all objects, but applied based on the object type.
+The object type defines the drawing method with the defined properties.
+Depending which property is defined in the PFD shape defintiion file, PFDCreator.shp, the property field is enabled or disabled.
+For now, all property fields are enabled.
+[font=italic]Hint[/font]
+When changing the object type in the Object Properties, ensure to correct properties, like for example direction, width, height.
+The PFD is redrawn on every property change.
+
+[b][textsize=16]Menu Object Index[/textsize][/b]
+An object has an unique index, which is set and changed (for example when adding a new object) by the application and can not be changed manually.
+The index is used to indentify an object when selected or searched for. The index should not be changed manually in the PFD file.
+
+[b][textsize=16]Menu Object Tag[/textsize][/b] 
+It is recommended to set for each object an unique tag. A tag is defined by a prefix + sequential indentifier.
+Tag examples for a flowchart Process P-1 or for a PID Pump P-1101.
+[font=italic]Background[/font]
+This application was originally developed for creating Process Instrumentation & Piping Diagrams, where tags are used for especially instrumentation.
+
+[b][textsize=16]Menu Object > Select[/textsize][/b] 
+Select an object from the list of objects. The dialog lists the object tag in alphabetical order.
+
+[b][textsize=16]Menu Object > Add[/textsize][/b]
+Add a new object selected from the list of objects.
+The object is added to the PFD at the position defined in the shape definition file PFDCreator.shp, like "centerx":100,"centery":50.
+Object default properties are set from the PFD definition file PFDCreator.shp.
+
+[font=italic]Hints[/font]
+[b]Line[/b] - Set the height or width of a line to at least 5 to be able to select properly. The thickness of a line is set by the property strokewidth. 
+
+[b][textsize=16]Menu Object > Update[/textsize][/b]
+Update the properties of the selected object from the Object Properties fields (at the right of the mainpage).
+
+[b][textsize=16]Menu Object > Remove[/textsize][/b]
+Remove the selected object.
+[font=italic]Warning[/font]
+The object removed can not be recovered. Hint: Backup the PFD file first.
+
+[b][textsize=16]Menu Object > Remove Selected[/textsize][/b]
+Remove objects selected using the draw mode Select.
+[font=italic]Warning[/font]
+The objects removed can not be recovered. Hint: Backup the PFD file first.
+
+[b][textsize=16]Menu Object > Move[/textsize][/b] 
+[b][textsize=16]Menu Object > Left, Up, Down, Right[/textsize][/b] 
+Move the selected object into the direction with the defined move step size.
+[font=italic]Hint[/font]
+If the selected object does not move, re-select the object.
+[font=italic]Hint[/font]
+An object X,Y-position is centered.
+Use the Object Properties X, Y, width, height fields to fine adjust the object position.
+
+[b][textsize=18]Menu Draw[/textsize][/b]
+Option to set the one of the 4 draw modes Off, Objects, Lines, Select.
+
+[b][textsize=16]Menu Draw > Off[/textsize][/b]
+Object properties can be changed, but the PFD drag&drop feature of the selected object is disabled.
+This means, moving the object with the arrow keys or mouse is not possible, but using the object property position fields.
+
+[b][textsize=16]Menu Draw > Objects[/textsize][/b]
+Objects properties can be changed and the PFD drag&drop feature of the selected object is enabled.
+[font=italic]Hint[/font]
+In draw objects mode, do select an object at its middle (center X, Y) position.
+If not, the object is moved (new center X,Y position) to the mouse clicked X,Y position
+
+[b][textsize=16]Menu Draw > Lines[/textsize][/b]
+Draw horizontal (start and end point have the same y-coordinate) or vertical lines (start and end point have the same x-coordinate).
+[font=italic]Note[/font]
+Diagonal lines are not supported (planned).
+
+[b][textsize=16]Menu Draw > Select[/textsize][/b]
+Select multiple objects and move with the object properties arrows (bottom right of the screen).
+
+[b][textsize=16]Menu Draw > Erase[/textsize][/b]
+Remove all objects from the PFD, i.e. clear the PFD.
+[font=italic]Warning[/font]
+The removed objects can not be recovered.
+To keep the PFD, prior erasing, do save the PFD first under a new name
+
+[b][textsize=16]Menu Draw > Refresh[/textsize][/b]
+Refresh the PFD.
+Use this option to show property changes.
+To be used when the tools > option "Direct Update" is disabled.
+
+[b][textsize=18]Menu Tools[/textsize][/b]
+Various tools which are saved in the application settings file PFDCreator.set.
+
+[b][textsize=16]Menu Tools > Show Grid[/textsize][/b]
+Option to show a grid, with default size 5x5 pixels as background on the PFD.
+
+[b][textsize=16]Menu Tools > Show Index[/textsize][/b]
+Option to show the object index, as a red circle with unique number at the object center x,y position.
+
+[b][textsize=16]Menu Tools > PFD Background Color[/textsize][/b]
+Set the background color of the PFD.
+The selected color is also set in the PFD Definition File as key "pfdbackgroundcolor" with HEX value ARGB, like "FFE0E0E0".
+
+[b][textsize=16]Menu Select to Code[/textsize][/b]
+This is an [font=italic]Experimental[/font] feature.
+Create B4X code from the shapes included in the [b]Select[/b] area.
+The code creates a module "DrawSHAPENAME" with per shape an object with the calling method as defined in the basic shapetype definition.
+
+[b][textsize=16]Menu Tools > Debug[/textsize][/b]
+Option to set the debug flag. If set, the B4J IDE log shows detailed information for any action taken.
+
+[b][textsize=18]Menu Help[/textsize][/b]
+
+[b][textsize=16]Menu Help > Help[/textsize][/b]
+This help file.
+
+[b][textsize=16]Menu Help > About[/textsize][/b]
+Information about this application and credits.
+
+[b][textsize=20]Key Control Shortcuts[/textsize][/b]
+Key control is supported for following keys:
+[LIST]
+[*]Ctrl-O: PFD file open
+[*]Ctrl-S: PFD file save
+[*]Ctrl-C: Copy selected object to the clipboard
+[*]Ctrl-P: Paste selected object from the clipboard
+[*]Ctrl-X: Cut selected object to the clipboard
+[*]Arrow LEFT: Move selected object left (with move steps size value)
+[*]Arrow UP: Move selected object up (with move steps size value)
+[*]Arrow DOWN: Move selected object down (with move steps size value)
+[*]Arrow RIGHT: Move selected object right (with move steps size value)
+[*]DEL: Remove the selected object from the list and PFD
+[*]F1: Help
+[*]F5: Set draw mode off
+[*]F6: Set draw mode objects
+[*]F7: Set draw mode lines
+[*]F8: Set draw mode selec
+[/LIST]
+[b][textsize=20]Object Properties[/textsize][/b]
+Set the properties of an object.
+[font=italic]Hint[/font]
+The PFD is immediate updated (redrawn) after changing a property.
+
+The properties listed are all possible properties (as defined for a PFD Object) that can be set, but which are used vary by object.
+Which property is enabled for an object, is defined in the shape definition file PFDCreator.shp.
+[font=italic]Hint[/font]
+For now all possible properties are enabled for all objects. This means that changing a property might not have an affect on the selected object.
+There are a number of properties, which apply to specific objects, like for PID diagrams.
+Look up, the hint of the object property.
+
+[b][textsize=16]Type[/textsize][/b]
+Set the type of the object. When adding an object, the type is defined and normally not changed.
+If changing a type, then ensure to set the properties.
+
+[b][textsize=16]Tag[/textsize][/b]
+Set the mandatory Tag for an object.
+Depending the object type, the tag is displayed.
+The tag origin comes from PID.
+
+[b][textsize=16]Description[/textsize][/b]
+Set a short description for the object.
+
+[b][textsize=16]Value[/textsize][/b]
+Set the object value, which can be a string or number.
+Depending object type, the unit is displayed.
+
+[b][textsize=16]Unit[/textsize][/b]
+Set the unit for the object value.
+The unit accepts unicode, like Ohm sign \u2126.
+Depending object type, the unit is displayed.
+
+[b][textsize=16]Direction[/textsize][/b]
+Set the direction for a shape. Which direction, is defined per shape.
+
+[b][textsize=16]Arrow[/textsize][/b]
+Set the arrow direction for the shape.
+If NONE, no arrow is displayed.
+The arrow applies to shapes, like arrows or lines.
+
+[b][textsize=16]Center X[/textsize][/b]
+Set the center X coordination of the shape.
+
+[b][textsize=16]Center Y[/textsize][/b]
+Set the center Y coordination of the shape.
+
+[b][textsize=16]Width[/textsize][/b]
+Set the width of the shape.
+[font=italic]Hint[/font]
+If the direction of a shape changes from for example horizontal to vertical, ensure to adjust the width & height of the shape.
+
+[b][textsize=16]Height[/textsize][/b]
+Set the height of the shape.
+[font=italic]Hint[/font]
+If the direction of a shape changes from for example horizontal to vertical, ensure to adjust the width & height of the shape.
+
+[b][textsize=16]Image[/textsize][/b]
+Set the filename with extension .png for the image shape.
+The image must be located in the application folder and must of type PNG.
+
+[b][textsize=16]Font[/textsize][/b]
+Set the font of text like tag, value and unit.
+The font applies to all text fields used.
+There are font defaults.
+
+[b][textsize=16]Font Size[/textsize][/b]
+Set the font size of text like tag, value and unit.
+The font applies to all text fields used.
+
+[b][textsize=16]Fill Color[/textsize][/b]
+Set the fill color of a shape.
+This option applies to shapes like rectangle, textbos, process etc..
+
+[b][textsize=16]Border Color[/textsize][/b]
+Set the border color of a shape.
+This option applies to shapes like rectangle, textbos, process etc..
+
+[b][textsize=16]Text Color[/textsize][/b]
+Set the color of the text like tag, value, unit.
+The font applies to all text fields used.
+
+[b][textsize=16]Text Alignment[/textsize][/b]
+Set the text alignment to LEFT, CENTER or RIGHT.
+The font applies to all text fields used.
+
+[b][textsize=16]Strokewidth[/textsize][/b]
+Set the width of a stroke.
+This option is used by many shapes.
+
+[b][textsize=16]Corner Radius[/textsize][/b]
+Set the corner radius for a shape.
+This option is mainly used for rectangle shapes, like
+Basic > Pane, Rectangle, Textbox; PID > LevelIndicator.
+
+[b][textsize=16]Separator[/textsize][/b]
+Set the option to add a separator to the shape.
+This is used by for example the PID shape Indicator.
+
+[b][textsize=16]Operate[/textsize][/b]
+Set the option to operate the object.
+Clinking on an object would trigger an action.
+The idea is to create dedicated B4J applications to operate PFDs, like PFDOperatePIDSWS.b4j.
+This application reads the PFD file "pid_sws.pfd" and contains logic to operate objects.
+[font=italic]Note[/font]
+This is work in progress. Looking for a way to create and handle events for an object.
+
+[b][textsize=16]Index[/textsize][/b]
+The index (readonly) of the object.
+The number is created automatically by the PFDCreator, is not fixed and can not be changed.
+[font=italic]Note[/font]
+Work in progress to set a fix index number.
+
+[b][textsize=16]Hint[/textsize][/b]
+Hint for the select object.
+The hint is defined in the shape defintion file PFDCreator.shp, JSON key "hint".
+
