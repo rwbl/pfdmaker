@@ -1,7 +1,7 @@
 # CHANGELOG - Project PFDCreator
 PFDCreator is a B4J application created with B4J v10.0 (64 bit), Java JDK 19.0.2.
 
-## v0.60 (Build 20241220)
+## v1.00 (Build 20241220)
 * NEW: Key management - Support for some keys, like Move object(s) using the arrow keys; Control+O, Control+S; Delete.
 * NEW: Resize an object (after selection) via mouse touched by using 5 rectangles = object + 4 corners.
 * NEW: Font DEFAULTITALIC, DIGITAL (slows down moving objects).
