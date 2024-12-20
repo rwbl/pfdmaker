@@ -262,14 +262,14 @@ This means there is only a single Basic.MYSHAPE.
 ## Add Objects to the PFD shape type code module
 These are the steps for adding shapes to a PFD shape type code module, like PFDShapesPID, PFDShapesFlowchart and other.
 This is an example for adding a new shape BOILER defined in the PFD shape type code module PFDShapesPID.
-**Step 1**
+### Step 1
 Add the PID_SHAPE_NAME to the Process Globals.
 Example:
 ```
 Public PID_SHAPE_BOILER As String = "BOILER"
 ```
 
-**Step 2**
+### Step 2
 Add the method DrawBoiler to the public global method DrawShape with the mandatory two arguments cvs and obj.
 Example:
 ```
@@ -282,7 +282,7 @@ Public Sub DrawShape(cvs As AsyncCanvas, obj As TPFDObject)
 End Sub
 ```
 
-**Step 3**
+### Step 3
 Create the method DrawBoiler.
 Define the region with same name as the object (Capital letters).
 The draw method has the name DrawObject in Captital Letters, like DrawBoiler.
@@ -312,7 +312,7 @@ End Sub
 #End Region
 ```
 
-**Step 4**
+### Step 4
 Add the object to the shapes definition file PFDCreator.shp.
 ```
 {
@@ -373,22 +373,21 @@ The menu Tools > Select to Code asks for a shape name and creates B4X method cod
 This code can be inserted in PFDShapes modules.
 Lets create a shape MyCircle.
 
-**Step 1**
+### Step 1
 On the PFD Shape Selector, add a basic shape Circle.
-**Step 2**
+### Step 2
 Place the circle at any position and set optionally the size to for example width & height 50.
-**Step 3**
+### Step 3
 Select the circle by using the Draw Mode Select (use the icon or menu Draw > Select).
-Note: The selection snaps to the grid.
-**Step 4**
+**Note:** The selection snaps to the grid.
+### Step 4
 Select menu option Tools > Select to Code.
-**Step 5**
+### Step 5
 In the dialog, give the shape the name MyShape.
-**Step 6**
+### Step 6
 The code is created and shown in a dialog from which the code can be copied to the clipboard.
 In addition the B4X code is to the file MyShape.sub in the application folder.
-
-B4X Code Example:
+**B4X Code Example**
 ```
 #Region MyShape
 'MyShape
@@ -438,28 +437,28 @@ for the PFDShapesBasic (B4X Code Module) method DrawCircle.
 This example uses only one shape, but of course an own object can have many shapes (which then will use for each a dedicated local object).
 
 To iterate the steps to add this shape to the PFDCreator:
-**Step 1**
+#### Step 1
 From the B4J IDE, open the B4J project PFDCreator.
-**Step 2**
+#### Step 2
 Select the B4X shape code module which is in this case PFDShapesBasic because this is a new basic shape.
-**Step 3**
+#### Step 3
 Add the shape name in Sub Process_Globals
 ```
 Public BASIC_SHAPE_MYSHAPE As String = "MYSHAPE"
 ```
 The prefix BASIC_SHAPE_ is mandatory.
-**Step 4**
+#### Step 4
 Add the call to draw the new shape in Public Sub DrawShape(cvs As AsyncCanvas, obj As TPFDObject)
 ```
 	Select obj.pfdobject
 		Case BASIC_SHAPE_MYSHAPE:
 			DrawMyShape(cvs, obj)
 ```
-**Step 5**
+#### Step 5
 Add the method DrawMyShape in PFDShapesBasic - recommend in alphabetical order.
 Because DrawMyShape is added to PFDShapesBasic, remove
 PFDShapesBasic from PFDShapesBasic.DrawCircle(cvs, obj9)
-**Step 6**
+#### Step 6
 Add the object properties to the shape defintion file PFDCreator.shp (in the application folder) for the key shapetype Basic.
 Modify the properties accordingly.
 ```
@@ -468,22 +467,22 @@ Modify the properties accordingly.
 		[
 			{"pfdobject":"MYSHAPE","tag":"MS-N","description":"MyShape","direction":"NONE","centerx":100,"centery":50,"arrow":"NONE","width":60,"height":60,"textcolor":"FF000000","fontsize":12,"bordercolor":"FF000000","fillcolor":"FFFFFFFF","font":"DEFAULT","strokewidth":2,"operate":false,"method":"DrawArrow","hint":"This is myshape."},
 ```
-**Step 7**
+#### Step 7
 In the B4J IDE, compile & run the project PFDCreator.b4j.
 The new shape can be found in the shape selector, in this case at first position.
 
 ## Create Standalone Package
 These are the steps to create a standalone package PFDCreator under Windows.
 Tested with Windows 11.
-**Step 1**
+#### Step 1
 From the B4J IDE, open the B4J project PFDCreator.
-**Step 2**
+#### Step 2
 Select menu Project > Build Standalone Package
 The package is created in folder (as an example):
 ```
 c:\data\projects\applications\PFDMaker\PFDCreator\B4J\Objects\temp\
 ```
-**Step 3**
+#### Step 3
 Copy PFDCreator files from the project Objects folder to the package folder Objects\temp\build\bin\.
 Following files are required:
 * PFDCreator.shp
@@ -507,11 +506,13 @@ echo Copy completed
 
 pause
 ```
-**Step 4**
+#### Step 4
 Test the application by running from the folder Objects\temp\build the application PFDCreator.exe.
-**Step 5**
+#### Step 5
 Copy the application from the Objects\temp\build to a target folder like c:\program files\PFDCreator.
 
 ### Hint debug
 To run the PFDCreator in debug mode, set the options Tools > Debug and run run_debug.bat (instead PFDCreator.exe).
 The debug option is stored in the PFDCreator settings (PFDCreator.set).
+
+
