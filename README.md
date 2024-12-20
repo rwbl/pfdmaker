@@ -1,14 +1,25 @@
-# pfdmaker
-PFDMaker is a suite of B4J applications to create, view or operate Process Flow Diagrams (PFD).
+# PFDMaker
+**PFDMaker** is a suite of [B4J](https://www.b4x.com/b4j.html) applications to create, view or operate **P**rocess **F**low **D**iagrams (PFD).
 
 Developed as a personal challenge (and for personal use) to create all kind of PFDs.
-The main focus has been on [I]Chemical Engineering diagrams[/I], but evolving for [I]Flowcharts[/I] and more to like [I]Electrical[/I] shapes.
+The main focus has been on **Chemical Engineering diagrams**, but evolving for **Flowcharts** and more like **Electrical** shapes.
 
 There are 4 applications:
+* **PFDCreator** - create PFDs using objects drag & dropped on a canvas
+* **PFDViewer** - view PFDs created by the PFDCreator
+* **PFDOperator **- operate or control PFDs created by the PFDCreator
+* **PFDShapeMaker** - create object shapes used by the PFDCreator.
 
 
-* [B]PFDCreator [/B]- create PFDs using objects drag & dropped on a canvas
-* [B]PFDViewer [/B]- view PFDs created by the PFDCreator
-* [B]PFDOperator [/B]- operate or control PFDs created by the PFDCreator
-* [B]PFDShapeMaker [/B]- create object shapes used by the PFDCreator.
+
+
+🚧 The developments are in progress, but decided to share the source code of the B4J project **PFDCreator**.
+The source code of this B4J project can found in the archive pfdcreator.zip and it requires the [B4J](https://www.b4x.com/b4j.html) IDE.
+
+## PFDCreator
+An application to create all kind of simple **P**rocess **F**low **D**iagrams (PFDs) using objects (shapes) which are dragged & dropped on a Drawing Board (Canvas).
+A PFD contains objects which are shapes with properties.
+The properties define the object shape position, size, colors, text & format, but also its value, unit, operate flag and more.
+There are a number of predefined shapes, the basic shapes but also dedicated shape types to create flowcharts, process instrumentation & piping diagrams or electrical circuits.
+
 
