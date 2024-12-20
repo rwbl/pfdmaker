@@ -1,4 +1,4 @@
-# TODO - Project PFDCreator, Copyright (c)2024 Robert W.B. Linn, Pinneberg, Germany.
+# TODO - Project PFDCreator
 Actions to complete till next version of the application.
 Any ideas to be captured in IDEAS.md.
 
