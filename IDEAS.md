@@ -1,4 +1,4 @@
-# IDEAS - Project PFDCreator, Copyright (c) 2024 Robert W.B. Linn, Pinneberg, Germany.
+# IDEAS - Project PFDCreator
 Any ideas captured which might get implemented in the next version of the application.
 
 ## NEW: ISA-101
