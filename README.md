@@ -1,4 +1,4 @@
-# PFDMaker
+ # PFDMaker
 **PFDMaker** is a suite of [B4J](https://www.b4x.com/b4j.html) applications to create, view or operate **P**rocess **F**low **D**iagrams (PFD).
 
 Developed as a personal challenge (and for personal use) to create all kind of PFDs.
@@ -12,8 +12,10 @@ There are 4 applications:
 
 ![1734684964174](https://github.com/user-attachments/assets/6f591361-94a7-4de9-9ae3-b75f1b0f7ee2)
 
-🚧 The developments are in progress, but decided to share the source code of the B4J project **PFDCreator**.  
+🚧 The **PFDMaker** developments are in progress, but decided to share the source code of the B4J project **PFDCreator**.  
 The source code of this B4J project can found in the archive pfdcreator.zip and it requires the [B4J](https://www.b4x.com/b4j.html) to run.
+Read next.
+***
 
 ## PFDCreator
 An application to create all kind of simple **P**rocess **F**low **D**iagrams (PFDs) using objects (shapes) which are dragged & dropped on a Drawing Board (Canvas).
@@ -22,16 +24,16 @@ The properties define the object shape position, size, colors, text & format, bu
 There are a number of predefined shapes, the basic shapes but also dedicated shape types to create flowcharts, process instrumentation & piping diagrams or electrical circuits.
 
 Several Screenshots
-**Main Page**
+#### Main Page
 ![1734686420262](https://github.com/user-attachments/assets/28af6257-755b-490c-bbaa-07c834c87037)
 
-**Shape Types with Shapes**
+#### Shape Types with Shapes
 ![1734685315414](https://github.com/user-attachments/assets/a6f9722f-535d-4aee-8752-d0c05fe6b2f8)
 
-**Resize Object and Show Index**
+#### Resize Object and Show Index
 ![1734685142652](https://github.com/user-attachments/assets/ead04045-639b-4305-87b5-499d52cdf2a1)
 
-**B4XDialog Examples**
+#### B4XDialog Examples
 ![1734685249422](https://github.com/user-attachments/assets/60d4e002-6b1d-45ef-91b9-3fa1cfb8d4c9)
 
 ### PFD Shape Types
@@ -82,4 +84,4 @@ Create object shapes used by the PFDCreator.
 GNU General Public License v3.0 - Developed for personal use only. See file LICENSE.
 
 ## Credits
-To Anywhere Software and the B4X Community for sharing libraries, hints&tips.
+To [Anywhere Software](https://www.b4x.com) and the [B4X Community](https://www.b4x.com/android/forum/) for sharing libraries, hints&tips.
